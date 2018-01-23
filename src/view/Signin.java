@@ -42,6 +42,7 @@ public class Signin extends javax.swing.JFrame
     {
 
         initComponents();
+        this.setResizable(false);
         this.signIn=this;
         txtKey.setText("");
         lblWarn.setText("");
@@ -178,6 +179,7 @@ public class Signin extends javax.swing.JFrame
                                 }
                                 else
                                 {
+                                    
                                     new Home().runHome(signIn,u);
                                 }
                             }

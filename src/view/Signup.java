@@ -49,6 +49,7 @@ public class Signup extends javax.swing.JFrame
     public Signup()
     {
         initComponents();
+        this.setResizable(false);
         this.signUp=this;
         txtKey.setText("");
         lblWarn.setText("");

@@ -4,6 +4,7 @@
 */
 package util;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.user;
@@ -12,7 +13,7 @@ public class Authenticater
 {
     private final int keySize=6;
 
-    public user authenticate(List<user> users,List<Long> pressTimes, List<Long> interKeyTimes)
+    public user authenticate(List<user> users,List<Long> pressTimes, List<Long> interKeyTimes) throws SQLException
     {
         user user=null;
 
@@ -36,9 +37,12 @@ public class Authenticater
 
             System.out.println(u.getName()+" : "+ point);
 
-            if(point>2*keySize-6)
+            if(point>2*keySize-5)
             {
                 user=u;
+                UserRepo userRepo=new UserRepo();
+                userRepo.updateUser(user, pressTimes, interKeyTimes);
+                
             }
         }
 

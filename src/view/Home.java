@@ -18,6 +18,7 @@ public class Home extends javax.swing.JFrame
     public Home()
     {
         initComponents();
+        this.setResizable(false);
         this.home=this;
         this.setTitle("BioAuth-Home");
     }

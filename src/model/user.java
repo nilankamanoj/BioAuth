@@ -10,10 +10,18 @@ import java.util.List;
 public class user
 {
     private String name;
+    private int logins;
     private List<String> characters = new ArrayList<>();
     private List<Long> pressTimes = new ArrayList<>();
     private List<Long> interKeyTimes = new ArrayList<>();
+    
+    public int getLogins() {
+        return logins;
+    }
 
+    public void setLogins(int logins) {
+        this.logins = logins;
+    }
     public String getName()
     {
         return name;
